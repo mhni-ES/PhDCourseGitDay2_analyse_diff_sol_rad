@@ -22,11 +22,11 @@ def load_data(filename,num_meas):
 # compute statistics
 #mean = sum(diff_sol_rad)/num_measurements
 
-def mean(x,n):
+def mean(x):
     if np.isnan(x.astype(float)).any() == True:
-        mean_out = np.nansum(x.astype(float))/n
+        mean_out = np.nansum(x.astype(float))/len(x)
     else :
-        mean_out = sum(x)/n
+        mean_out = sum(x)/len(x)
     return mean_out
 
 # make a plotter script that can plot multiple scripts.
@@ -36,7 +36,7 @@ if __name__ == "__main__":
     for filename in os.listdir('../data/diffuse_sol_rad/'):
         #print(filename)
         diff_sol_rad = load_data(filename,num_measurements)
-        mean_out = mean(diff_sol_rad,num_measurements)
+        mean_out = mean(diff_sol_rad)
         # plot results
         savename = filename.split("-")
         plt.plot(diff_sol_rad)

@@ -17,8 +17,8 @@ import unittest
 
 class TestStringMethods(unittest.TestCase):
     def test_mean(self):
-        self.assertEqual(plot_diff_sol_rad.mean(np.array([10,20,30]),3),20)
-        self.assertEqual(plot_diff_sol_rad.mean(np.array([np.nan, 20, 30]), 2), 25)
+        self.assertEqual(plot_diff_sol_rad.mean(np.array([10,20,30])),20)
+        self.assertEqual(plot_diff_sol_rad.mean(np.array([np.nan, 20, 30])), 16.666666666666668)
 
 
 if __name__ == '__main__':
